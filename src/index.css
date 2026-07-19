@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050816;
+  color: #ffffff;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: #00e5ff;
+  color: #050816;
+}
+
+:focus-visible {
+  outline: 2px solid #00e5ff;
+  outline-offset: 3px;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(11, 16, 36, 0.55);
+  border: 1px solid rgba(0, 229, 255, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Animated glow border used on hover states */
+.glow-border {
+  position: relative;
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.glow-border:hover {
+  border-color: rgba(0, 229, 255, 0.6);
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.25), 0 0 70px rgba(138, 43, 226, 0.12);
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* Neon gradient text */
+.text-neon-gradient {
+  background: linear-gradient(90deg, #00e5ff 0%, #8a2be2 55%, #00ffb3 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Ripple button feedback */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+.btn-ripple:active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.35);
+  animation: ripple 0.5s ease-out;
+  border-radius: inherit;
+}
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2.2);
+  }
+}
+
+/* Circuit grid background layer */
+.bg-grid-layer {
+  background-image: linear-gradient(rgba(0, 229, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
