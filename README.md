@@ -1,75 +1,87 @@
-# NEXORA — Cyborg-Themed Landing Page
+# 🤖 NEXORA — Cyborg-Themed Landing Page
 
-A responsive, animated landing page for a fictional cybernetic augmentation company,
-built for the Cyborg-Themed Landing Page Development challenge.
+A responsive, animated landing page for a fictional cybernetic augmentation company. Built for the Cyborg-Themed Landing Page Development challenge.
 
-**Stack:** React (Vite) · Tailwind CSS · Framer Motion · Lucide React
+## Why I built this
 
-## Getting started
+The brief asked for a landing page that feels like the official site for a futuristic cyborg company — something that could pass as a real product page for AI-driven human augmentation. I wanted it to feel less like a template with neon colors slapped on, and more like a company that actually shipped a nervous-system interface: real spec language, a real procedure flow, and enough motion to feel alive without getting in the way.
+
+## What it can do
+
+* **Animated Hero** — headline, a typed-text readout cycling through live "modules," and a hand-built SVG cyborg illustration
+* **Ambient Particle Background** — canvas-based particle field that reacts to pointer movement
+* **Scroll-Spy Navigation** — the active nav link updates automatically as you scroll
+* **Feature & Technology Grids** — 6 capability cards + 6 tech stack cards, staggered scroll-in animation, glow on hover
+* **Animated Stat Counters** — counts up from zero when scrolled into view
+* **Gallery** — 4 panels rendered as live SVG patterns instead of stock photos, ready to swap for real images
+* **Dark, Neon Theme** — glassmorphism cards, gradient text, glow borders throughout
+* **Fully Responsive** — desktop, tablet, and mobile, with a working hamburger menu
+* **Accessible** — keyboard focus states, semantic landmarks, and respects `prefers-reduced-motion`
+
+## Tech Stack
+
+* **Frontend:** React + Vite, Tailwind CSS
+* **Animation:** Framer Motion
+* **Icons:** Lucide React
+* **Deployment:** Vercel
+
+## Challenges
+
+The trickiest part was the Gallery section. The brief called for cyborg/robotics/cityscape imagery, but using random stock photos felt like it would undercut the "distinctive product" feel — and licensing was a concern. Instead I built four SVG patterns (circuit trace, grid, skyline, node cluster) that render live in the site's own palette, so the gallery still feels intentional rather than placeholder-y. The panels are wired up so real photos or renders can drop in later without touching the layout.
+
+The other challenge was keeping the animation restrained. It's easy for a cyberpunk theme to turn into constant motion everywhere — I tried to save the boldest effects (particle field, hero illustration float, scroll progress bar) for a few spots and keep card hovers subtle.
+
+## Setup Instructions
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/kumarshivesh465-hue/nexora-cyborg-landing.git
+cd nexora-cyborg-landing
+```
+
+2. Install dependencies
 
 ```bash
 npm install
+```
+
+3. Run the project
+
+```bash
 npm run dev
 ```
 
-Then open the local URL Vite prints (usually `http://localhost:5173`).
+Open **http://localhost:5173**
 
-## Build for production
-
-```bash
-npm run build
-npm run preview   # serve the production build locally
-```
-
-The build output goes to `dist/`, ready to deploy to GitHub Pages, Vercel, or Netlify.
-
-## Project structure
+## Project Structure
 
 ```
 src/
 ├── components/
-│   ├── Navbar.jsx           Sticky nav, scroll-spy, mobile hamburger menu
-│   ├── Hero.jsx              Headline, typed-text module line, CTAs, SVG illustration
-│   ├── About.jsx              Mission / Vision / AI Integration / Cybernetic Innovation
-│   ├── Features.jsx          6 capability cards
-│   ├── Technology.jsx        6 tech stack cards
-│   ├── Stats.jsx               Scroll-triggered animated counters
-│   ├── Testimonials.jsx     3 patient/user quotes
-│   ├── Gallery.jsx            4 SVG-rendered panels (swap in real photos anytime)
-│   ├── CTA.jsx                  "Become More Than Human" call to action
-│   ├── Footer.jsx              Logo, nav, contact, socials, copyright
-│   ├── ScrollProgress.jsx  Top-of-page scroll progress bar
-│   └── ParticleBackground.jsx  Canvas particle field with pointer-reactive glow
+│   ├── Navbar.jsx              Sticky nav, scroll-spy, mobile menu
+│   ├── Hero.jsx                 Headline, typed text, CTA, SVG illustration
+│   ├── About.jsx                 Mission, vision, AI & cybernetic pillars
+│   ├── Features.jsx             Capability cards
+│   ├── Technology.jsx           Tech stack cards
+│   ├── Stats.jsx                  Animated counters
+│   ├── Testimonials.jsx        Patient quotes
+│   ├── Gallery.jsx               SVG-rendered image panels
+│   ├── CTA.jsx                     Closing call to action
+│   ├── Footer.jsx                 Nav, contact, socials
+│   ├── ScrollProgress.jsx     Scroll progress bar
+│   └── ParticleBackground.jsx Canvas particle field
 ├── hooks/
-│   └── useActiveSection.js  IntersectionObserver hook powering navbar highlighting
-├── App.jsx                     Assembles all sections in order
-├── main.jsx                    React entry point
-└── index.css                   Tailwind directives + glass/glow/gradient utilities
+│   └── useActiveSection.js   Scroll-spy logic
+├── App.jsx
+├── main.jsx
+└── index.css
 ```
 
-## Notes on the Gallery section
+## Live Demo
 
-The PRD calls for cyborg / robotics / futuristic-city / AI-lab imagery. Rather than use
-stock photography (licensing risk, and nothing subject-specific was provided), the four
-panels render live SVG patterns in the site's neon palette. The card frames, captions,
-and hover animation are fully wired up — drop real photos or renders into `PanelArt` in
-`Gallery.jsx` whenever you have them.
+🔗 https://nexora-cyborg-landing.vercel.app/
 
-## Accessibility
+## Author
 
-- Semantic landmarks (`header`, `main`, `footer`, `section` with ids)
-- Keyboard-visible focus states (`:focus-visible` outline)
-- `aria-label` / `aria-hidden` on icon-only controls and decorative SVGs
-- Respects `prefers-reduced-motion` (particle background, page animations, scroll behavior)
-
-## Deployment
-
-Any static host works. For GitHub Pages:
-
-```bash
-npm run build
-# push the dist/ folder to a gh-pages branch, or use a GitHub Action
-```
-
-For Vercel or Netlify, just connect the repo — both auto-detect Vite projects
-(`npm run build`, output directory `dist`).
+**Shivesh Kumar**
