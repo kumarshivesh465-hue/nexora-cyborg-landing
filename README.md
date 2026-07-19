@@ -25,6 +25,12 @@ The brief asked for a landing page that feels like the official site for a futur
 * **Icons:** Lucide React
 * **Deployment:** Vercel
 
+## Screenshots
+<img width="1898" height="923" alt="image" src="https://github.com/user-attachments/assets/4174323f-962d-4f0c-9339-6510725bcb4b" />
+<img width="1895" height="931" alt="image" src="https://github.com/user-attachments/assets/61516b01-167c-481e-8f5a-ec535d4968e9" />
+<img width="1901" height="933" alt="image" src="https://github.com/user-attachments/assets/4aa69147-0694-4459-afde-d6d914e32499" />
+<img width="1892" height="928" alt="image" src="https://github.com/user-attachments/assets/8703dcab-c129-4388-a671-108864255cec" />
+
 ## Challenges
 
 The trickiest part was the Gallery section. The brief called for cyborg/robotics/cityscape imagery, but using random stock photos felt like it would undercut the "distinctive product" feel — and licensing was a concern. Instead I built four SVG patterns (circuit trace, grid, skyline, node cluster) that render live in the site's own palette, so the gallery still feels intentional rather than placeholder-y. The panels are wired up so real photos or renders can drop in later without touching the layout.
